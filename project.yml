@@ -1,0 +1,31 @@
+name: example
+
+options:
+  bundleIdPrefix: es.com.jano.curldescription
+  usesTabs: false
+  indentWidth: 4
+  tabWidth: 4
+  createIntermediateGroups: true
+  deploymentTarget:
+    iOS: "13.2"
+
+settings:
+    CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED: YES
+    DEVELOPMENT_TEAM: PPSF6CNP8Q
+
+targets:
+
+  CurlDescription:
+    type: framework
+    platform: iOS
+    sources: sources
+
+  CurlDescriptionTests:
+    type: bundle.unit-test
+    platform: iOS
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: es.com.jano.curldescription.tests
+    sources:
+      - tests
+    dependencies:
+      - target: CurlDescription
